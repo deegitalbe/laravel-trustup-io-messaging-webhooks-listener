@@ -1,10 +1,10 @@
 <?php
-namespace Henrotaym\VersioningPackageTemplate\Providers;
+namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Providers;
 
-use Henrotaym\VersioningPackageTemplate\Package;
+use Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Package;
 use Henrotaym\LaravelPackageVersioning\Providers\Abstracts\VersionablePackageServiceProvider;
 
-class VersioningPackageTemplateServiceProvider extends VersionablePackageServiceProvider
+class LaravelTrustupIoMessagingWebhooksListenerServiceProvider extends VersionablePackageServiceProvider
 {
     public static function getPackageClass(): string
     {

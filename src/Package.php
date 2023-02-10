@@ -1,7 +1,7 @@
 <?php
-namespace Henrotaym\VersioningPackageTemplate;
+namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListener;
 
-use Henrotaym\VersioningPackageTemplate\Contracts\PackageContract;
+use Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Contracts\PackageContract;
 use Henrotaym\LaravelPackageVersioning\Services\Versioning\VersionablePackage;
 
 class Package extends VersionablePackage implements PackageContract

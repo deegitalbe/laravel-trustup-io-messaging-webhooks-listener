@@ -1,7 +1,7 @@
 <?php
-namespace Henrotaym\VersioningPackageTemplate\Tests\Feature;
+namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Tests\Feature;
 
-use Henrotaym\VersioningPackageTemplate\Tests\TestCase;
+use Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Tests\TestCase;
 
 class ExampleFeatureTest extends TestCase
 {

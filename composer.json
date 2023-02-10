@@ -1,6 +1,6 @@
 {
-    "name": "henrotaym/versioning-package-template",
-    "description": "Basic versioned php package.",
+    "name": "deegitalbe/laravel-trustup-io-messaging-webhooks-listener",
+    "description": "Our package used to listen to messaging webhooks",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -18,18 +18,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Henrotaym\\VersioningPackageTemplate\\": "src"
+            "Deegitalbe\\LaravelTrustupIoMessagingWebhooksListener\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Henrotaym\\VersioningPackageTemplate\\Tests\\": "tests"
+            "Deegitalbe\\LaravelTrustupIoMessagingWebhooksListener\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Henrotaym\\VersioningPackageTemplate\\Providers\\VersioningPackageTemplateServiceProvider"
+                "Deegitalbe\\LaravelTrustupIoMessagingWebhooksListener\\Providers\\LaravelTrustupIoMessagingWebhooksListenerServiceProvider"
             ]
         }
     }
