@@ -1,7 +1,7 @@
 <?php
-namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Facades;
+namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Facades;
 
-use Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Package as Underlying;
+use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Package as Underlying;
 use Henrotaym\LaravelPackageVersioning\Facades\Abstracts\VersionablePackageFacade;
 
 class Package extends VersionablePackageFacade

@@ -1,9 +1,10 @@
 <?php
-namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Tests;
+namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Tests;
 
-use Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Package;
+use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Package;
 use Henrotaym\LaravelPackageVersioning\Testing\VersionablePackageTestCase;
-use Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Providers\LaravelTrustupIoMessagingWebhooksListenerServiceProvider;
+use Deegitalbe\ServerAuthorization\Providers\ServerAuthorizationServiceProvider;
+use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Providers\LaravelTrustupIoMessagingWebhooksListenersServiceProvider;
 
 class TestCase extends VersionablePackageTestCase
 {
@@ -15,7 +16,8 @@ class TestCase extends VersionablePackageTestCase
     public function getServiceProviders(): array
     {
         return [
-            LaravelTrustupIoMessagingWebhooksListenerServiceProvider::class
+            ServerAuthorizationServiceProvider::class,
+            LaravelTrustupIoMessagingWebhooksListenersServiceProvider::class,
         ];
     }
 }

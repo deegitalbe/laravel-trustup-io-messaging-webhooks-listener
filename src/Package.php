@@ -1,13 +1,13 @@
 <?php
-namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListener;
+namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners;
 
-use Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Contracts\PackageContract;
+use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Contracts\PackageContract;
 use Henrotaym\LaravelPackageVersioning\Services\Versioning\VersionablePackage;
 
 class Package extends VersionablePackage implements PackageContract
 {
     public static function prefix(): string
     {
-        return "versioning_package_template";
+        return "laravel-trustup-io-messaging-webhooks-listeners";
     }
 }

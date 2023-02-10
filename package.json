@@ -1,8 +1,8 @@
 {
-    "name": "laravel-trustup-io-messaging-webhooks-listener",
+    "name": "laravel-trustup-io-messaging-webhooks-listeners",
     "version": "1.0.0",
     "main": "index.js",
-    "repository": "git@github.com:deegitalbe/laravel-trustup-io-messaging-webhooks-listener.git",
+    "repository": "git@github.com:deegitalbe/laravel-trustup-io-messaging-webhooks-listeners.git",
     "author": "Mathieu Henrotay <mathieu.henrotay@gmail.com>",
     "license": "MIT",
     "scripts": {

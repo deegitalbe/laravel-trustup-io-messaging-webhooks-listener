@@ -1,7 +1,7 @@
 <?php
-namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Tests\Unit;
+namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Tests\Unit;
 
-use Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Tests\TestCase;
+use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Tests\TestCase;
 use Henrotaym\LaravelPackageVersioning\Testing\Traits\InstallPackageTest;
 
 class InstallingPackageTest extends TestCase

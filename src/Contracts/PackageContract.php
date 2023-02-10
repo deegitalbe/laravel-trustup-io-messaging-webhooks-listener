@@ -1,5 +1,5 @@
 <?php
-namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListener\Contracts;
+namespace Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Contracts;
 
 use Henrotaym\LaravelPackageVersioning\Services\Versioning\Contracts\VersionablePackageContract;
 use Henrotaym\LaravelContainerAutoRegister\Services\AutoRegister\Contracts\AutoRegistrableContract;
