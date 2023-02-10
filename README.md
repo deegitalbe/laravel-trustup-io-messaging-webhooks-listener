@@ -11,13 +11,9 @@ php artisan vendor:publish --provider="Deegitalbe\LaravelTrustupIoMessagingWebho
 ```
 
 ## Available listeners
-See in config what you would like to listen to and created dedicated class implementing required contract.
 
-### Messages listeners
-
-#### Message created listener
-
-##### Define listener
+### Message created
+Define your listener
 ```php
 use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Contracts\Listeners\Messages\TrustupIoMessagingMessageCreatedListenerContract;
 
@@ -29,8 +25,7 @@ class MessageCreatedListener implements TrustupIoMessagingMessageCreatedListener
     }
 }
 ```
-
-##### Register your listener
+Register your listener in config
 ```php
     /**
      * Messaging microservice listeners.
