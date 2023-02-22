@@ -6,6 +6,8 @@ use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Package;
 use Deegitalbe\ServerAuthorization\Http\Middleware\AuthorizedServer;
 use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Facades\Package as PackageFacade;
 use Henrotaym\LaravelPackageVersioning\Providers\Abstracts\VersionablePackageServiceProvider;
+use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Listeners\Guards\AppKeyListenerGuard;
+use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Contracts\Listeners\Guards\AppKeyListenerGuardContract;
 use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Contracts\Listeners\Messages\TrustupIoMessagingMessageCreatedListenerContract;
 
 class LaravelTrustupIoMessagingWebhooksListenersServiceProvider extends VersionablePackageServiceProvider
@@ -17,7 +19,8 @@ class LaravelTrustupIoMessagingWebhooksListenersServiceProvider extends Versiona
 
     protected function addToRegister(): void
     {
-        $this->registerMessageCreatedListener();
+        $this->registerMessageCreatedListener()
+            ->registerAppKeyGuard();
     }
 
     protected function addToBoot(): void
@@ -31,6 +34,13 @@ class LaravelTrustupIoMessagingWebhooksListenersServiceProvider extends Versiona
             TrustupIoMessagingMessageCreatedListenerContract::class,
             PackageFacade::getConfig('listeners.messages.created')
         );
+
+        return $this;
+    }
+
+    protected function registerAppKeyGuard(): self
+    {
+        $this->app->bind(AppKeyListenerGuardContract::class, AppKeyListenerGuard::class);
 
         return $this;
     }

@@ -47,3 +47,11 @@ Register your listener in config
         ]
     ]
 ```
+
+## Listener configuration
+Add any of those interfaces to your listener to customize it.
+
+### Limit to your current app only
+```php
+use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Contracts\Listeners\Config\ListenToCorrespondingAppKey;
+```
