@@ -14,17 +14,7 @@ class MessageCreatedController extends Controller
         TrustupIoMessagingMessageCreatedListenerContract $listener,
         AppKeyListenerGuardContract $guard
     ) {
-        Log::error("this is before should trigger", [
-            "request" => $request->all(),
-            "app_name" => $request->input('conversation.app_name'),
-            "listener" => $listener::class
-        ]);
-
-        $shouldTrigger = $guard->shouldTrigger($listener, $request->input('conversation.app_name'));
-
-        Log::error("should trigger value", [
-            "shouldTrigger" => $shouldTrigger
-        ]);
+        $shouldTrigger = $guard->shouldTrigger($listener, $request->input("message.conversation.app_name"));
         
         if (!$shouldTrigger) return;
 

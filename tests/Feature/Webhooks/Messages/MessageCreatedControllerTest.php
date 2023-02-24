@@ -19,7 +19,7 @@ class MessageCreatedControllerTest extends TestCase
     public function test_that_triggering_message_created_listener_with_correct_attributes()
     {
         $listener = $this->mockThis(TrustupIoMessagingMessageCreatedListenerContract::class);
-        $messageAttributes = ['hello' => 'world'];
+        $messageAttributes = ["message" => ['hello' => 'world']];
 
         $listener->shouldReceive('onMessageCreated')->once()->with($messageAttributes);
         
@@ -40,7 +40,7 @@ class MessageCreatedControllerTest extends TestCase
         putenv("TRUSTUP_MESSAGING_APP_KEY=test");
         $this->app->bind(TrustupIoMessagingMessageCreatedListenerContract::class, TestAppKeyListener::class);
         $listener = $this->mockThis(TestAppKeyListener::class);
-        $messageAttributes = ['hello' => 'world', 'conversation' => ['app_name' => 'test']];
+        $messageAttributes = ["message" => ['hello' => 'world', 'conversation' => ['app_name' => 'test']]];
 
         $listener->shouldReceive('onMessageCreated')->once()->with($messageAttributes);
         
@@ -61,7 +61,7 @@ class MessageCreatedControllerTest extends TestCase
         putenv("TRUSTUP_MESSAGING_APP_KEY=nope");
         $listener = $this->mockThis(TestAppKeyListener::class);
         $this->app->bind(TrustupIoMessagingMessageCreatedListenerContract::class, TestAppKeyListener::class);
-        $messageAttributes = ['hello' => 'world', 'conversation' => ['app_name' => 'test']];
+        $messageAttributes = ["message" => ['hello' => 'world', 'conversation' => ['app_name' => 'test']]];
 
         $listener->shouldNotReceive('onMessageCreated');
         

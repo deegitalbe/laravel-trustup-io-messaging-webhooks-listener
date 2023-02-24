@@ -24,7 +24,7 @@ class MessageCreatedListener implements TrustupIoMessagingMessageCreatedListener
 {
     public function onMessageCreated(array $messageAttributes): void
     {
-        // your implementation goes here ...
+        
     }
 }
 ```
@@ -46,6 +46,36 @@ Register your listener in config
             "created" => MessageCreatedListener::class
         ]
     ]
+```
+MessageAttributes structure
+```js
+{
+    "message": {
+    "id": 4339,
+    "type": "text",
+    "text": "The order of the message is not really good",
+    "status": null,
+    "user_id": 38943,
+    "conversation_id": 2767,
+    "conversation": {
+        "id": 2767,
+        "app_name": "trustup-io-ticketing",
+        "type": "conversation",
+        "title": "null",
+        "model": "ticket",
+        "model_id": "840942e5-b63e-4ab5-8f72-079e7a35be0e",
+        "user_id": 38943,
+        "meta": null,
+        "deleted_at": null,
+        "created_at": "2023-02-23T15:59:08.000000Z",
+        "updated_at": "2023-02-23T15:59:08.000000Z"
+    },
+    "seen_by": [],
+    "deleted_at": null,
+    "created_at": "2023-02-24T14:54:37.000000Z",
+    "updated_at": "2023-02-24T14:54:37.000000Z"
+    }
+}
 ```
 
 ## Listener configuration
