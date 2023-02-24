@@ -19,9 +19,9 @@ class MessageCreatedControllerTest extends TestCase
     public function test_that_triggering_message_created_listener_with_correct_attributes()
     {
         $listener = $this->mockThis(TrustupIoMessagingMessageCreatedListenerContract::class);
-        $messageAttributes = ["message" => ['hello' => 'world']];
+        $webhookData = ["message" => ['hello' => 'world']];
 
-        $listener->shouldReceive('onMessageCreated')->once()->with($messageAttributes);
+        $listener->shouldReceive('onMessageCreated')->once()->with($webhookData);
         
         $response = $this->json(
             "POST",
@@ -29,7 +29,7 @@ class MessageCreatedControllerTest extends TestCase
                 'webhooks.trustup-io-messaging.messages.created',
                 ['message' => 'uuid']
             ),
-            $messageAttributes
+            $webhookData
         );
 
         $response->assertStatus(200);
@@ -40,9 +40,9 @@ class MessageCreatedControllerTest extends TestCase
         putenv("TRUSTUP_MESSAGING_APP_KEY=test");
         $this->app->bind(TrustupIoMessagingMessageCreatedListenerContract::class, TestAppKeyListener::class);
         $listener = $this->mockThis(TestAppKeyListener::class);
-        $messageAttributes = ["message" => ['hello' => 'world', 'conversation' => ['app_name' => 'test']]];
+        $webhookData = ["message" => ['hello' => 'world', 'conversation' => ['app_name' => 'test']]];
 
-        $listener->shouldReceive('onMessageCreated')->once()->with($messageAttributes);
+        $listener->shouldReceive('onMessageCreated')->once()->with($webhookData);
         
         $response = $this->json(
             "POST",
@@ -50,7 +50,7 @@ class MessageCreatedControllerTest extends TestCase
                 'webhooks.trustup-io-messaging.messages.created',
                 ['message' => 'uuid']
             ),
-            $messageAttributes
+            $webhookData
         );
 
         $response->assertStatus(200);
@@ -61,7 +61,7 @@ class MessageCreatedControllerTest extends TestCase
         putenv("TRUSTUP_MESSAGING_APP_KEY=nope");
         $listener = $this->mockThis(TestAppKeyListener::class);
         $this->app->bind(TrustupIoMessagingMessageCreatedListenerContract::class, TestAppKeyListener::class);
-        $messageAttributes = ["message" => ['hello' => 'world', 'conversation' => ['app_name' => 'test']]];
+        $webhookData = ["message" => ['hello' => 'world', 'conversation' => ['app_name' => 'test']]];
 
         $listener->shouldNotReceive('onMessageCreated');
         
@@ -71,7 +71,7 @@ class MessageCreatedControllerTest extends TestCase
                 'webhooks.trustup-io-messaging.messages.created',
                 ['message' => 'uuid']
             ),
-            $messageAttributes
+            $webhookData
         );
 
         $response->assertStatus(200);

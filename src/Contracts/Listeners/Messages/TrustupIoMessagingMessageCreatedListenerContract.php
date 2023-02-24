@@ -11,8 +11,8 @@ interface TrustupIoMessagingMessageCreatedListenerContract extends ListenerContr
     /**
      * Performing action based on new message attributes.
      * 
-     * @param array $messageAttributes
+     * @param array $webhookData
      * @return void
      */
-    public function onMessageCreated(array $messageAttributes): void;
+    public function onMessageCreated(array $webhookData): void;
 }

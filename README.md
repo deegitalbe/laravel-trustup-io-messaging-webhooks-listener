@@ -22,7 +22,7 @@ use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Contracts\Listeners\Me
 
 class MessageCreatedListener implements TrustupIoMessagingMessageCreatedListenerContract
 {
-    public function onMessageCreated(array $messageAttributes): void
+    public function onMessageCreated(array $webhookData): void
     {
         
     }
@@ -47,7 +47,7 @@ Register your listener in config
         ]
     ]
 ```
-MessageAttributes structure
+Webhook data structure
 ```js
 {
     "message": {

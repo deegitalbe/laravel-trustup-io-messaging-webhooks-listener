@@ -5,7 +5,7 @@ use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Contracts\Listeners\Co
 use Deegitalbe\LaravelTrustupIoMessagingWebhooksListeners\Contracts\Listeners\Messages\TrustupIoMessagingMessageCreatedListenerContract;
 
 class TestAppKeyListener implements TrustupIoMessagingMessageCreatedListenerContract, ListenToCorrespondingAppKey {
-    public function onMessageCreated(array $messageAttributes): void
+    public function onMessageCreated(array $webhookData): void
     {
         
     }
